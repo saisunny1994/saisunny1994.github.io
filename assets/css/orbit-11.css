@@ -286,6 +286,7 @@ p {
     width: 30%;
     margin-bottom: 0;
   }
+}
 
 .collapsible {
   background-color: rgb(255, 255, 255);
@@ -340,4 +341,3 @@ p {
   font-size: 15px;
 }
 
-}

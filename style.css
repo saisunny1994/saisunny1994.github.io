@@ -103,7 +103,7 @@
 :root {
   --body-color: hsl(0, 5%, 10%);
   --body-bg-color: hsl(210, 20%, 98%);
-  --link-visited: hsl(232, 97%, 23%);
+  --link-visited: hsl(232, 97%, 39%);
   --link-focus-outline: hsl(220, 90%, 52%);
   --pre-bg-color: hsl(210, 28%, 93%);
   --kbd-bg-color: hsl(210, 5%, 100%);
@@ -200,7 +200,7 @@ body.libertinus {
 .buttonlink{
   padding:2pt;
   width: 80pt;
-  margin-left: 700px !important;
+  margin-left: 0px !important;
   margin-top:5pt;
   border-radius: 3pt;
   border: 1pt solid black;
@@ -219,7 +219,8 @@ body.libertinus {
 body {
   font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
   line-height: 1.8;
-
+  padding:0;
+  height:100%;
   max-width: 120ch;
   min-height: 100vh;
   overflow-x: hidden;
@@ -871,4 +872,13 @@ h4,
 h5,
 h6 {
   margin-bottom: 0.8rem;
+}
+
+html {
+  background-color: #080000;/*#5a0000; /* light gray */
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+body{
+  padding:50px
 }

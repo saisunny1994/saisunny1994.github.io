@@ -341,7 +341,7 @@ pre,
 kbd {
   font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
-  font-size: 75%;
+  font-size: 0.75em;
   hyphens: none;
 }
 pre {

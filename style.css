@@ -200,7 +200,7 @@ body.libertinus {
 .buttonlink{
   padding:2pt;
   width: 80pt;
-  margin-left: 0px !important;
+  margin-left: 360px !important;
   margin-top:5pt;
   border-radius: 3pt;
   border: 1pt solid black;
@@ -212,6 +212,26 @@ body.libertinus {
 }
 
 .buttonlink:hover{
+  background-color: hsl(210, 90%, 48%);
+  color: white;
+  box-shadow: 0px 0px 5pt hsl(210, 20%, 98%);
+}
+
+.buttonlink1{
+  padding:2pt;
+  width: 80pt;
+  margin-left: 0px !important;
+  margin-top:5pt;
+  border-radius: 3pt;
+  border: 1pt solid black;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin-left:0;
+}
+
+.buttonlink1:hover{
   background-color: hsl(210, 90%, 48%);
   color: white;
   box-shadow: 0px 0px 5pt hsl(210, 20%, 98%);
@@ -805,6 +825,8 @@ input.sidenote-toggle {
   line-height: 1ex;
 }
 
+
+
 /* Prevent line breaks inside an element */
 .whitespace-nowrap {
   white-space: nowrap;
@@ -875,10 +897,10 @@ h6 {
 }
 
 html {
-  background-color: #080000;/*#5a0000; /* light gray */
+  background-color: #062f40;/*#5a0000; /* light gray */
   margin-top: 40px;
   margin-bottom: 40px;
 }
 body{
-  padding:50px
+  padding:60px
 }

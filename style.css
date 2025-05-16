@@ -352,7 +352,7 @@ pre {
   background: var(--pre-bg-color);
 }
 pre code {
-  font-size: 95%;
+  font-size: 0.95rem;
   position: relative;
 }
 kbd {
@@ -360,7 +360,7 @@ kbd {
   border: 1px solid var(--kbd-border-color);
   border-radius: 2px;
   padding: 2px 4px;
-  font-size: 75%;
+  font-size: 0.75rem;
 }
 
 /* Better tables */
@@ -788,7 +788,7 @@ input.sidenote-toggle {
 /* Make footnote text smaller */
 .footnotes p {
   line-height: 1.5;
-  font-size: 85%;
+  font-size: 0.85rem;
   margin-bottom: 0.4rem;
 }
 .footnotes {

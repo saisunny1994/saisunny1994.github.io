@@ -200,7 +200,7 @@ body.libertinus {
 .buttonlink{
   padding:2pt;
   width: 80pt;
-  margin-left: 360px !important;
+  margin-left: 44% !important;
   margin-top:5pt;
   border-radius: 3pt;
   border: 1pt solid black;
@@ -341,7 +341,7 @@ pre,
 kbd {
   font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
-  font-size: 85%;
+  font-size: 75%;
   hyphens: none;
 }
 pre {

@@ -8,387 +8,528 @@
   <title>Saina Sunny</title>
 
   <meta name="description"
-    content="A minimal, almost class-less CSS library to write modern websites that look like LaTeX documents." />
-  <meta name="keywords" content="latex.css,css library,class-less css,latex css" />
-  <meta property="og:title" content="LaTeX.css" />
-  <meta property="og:url" content="https://latex.vercel.app" />
+    content="Saina Sunny is a post-doctoral researcher in formal methods, automata theory, transducers, and formal languages." />
+  <meta name="keywords"
+    content="Saina Sunny, formal methods, automata theory, formal languages, transducers, theoretical computer science" />
+  <meta property="og:title" content="Saina Sunny" />
+  <meta property="og:url" content="https://saisunny1994.github.io" />
   <meta property="og:description"
-    content="A minimal, almost class-less CSS library to write modern websites that look like LaTeX documents." />
+    content="Post-doctoral researcher in the Formal Methods and Verification research group at Université libre de Bruxelles." />
   <meta property="og:type" content="website" />
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="prism/prism.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
-<body id="top" class="text-justify" style="">
-  <header style="text-align: center;">
-  
-      <img class="profile" src="image/profile.png" alt="" width="200" height="200" style="display: block; margin: 0 auto;"/>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <h1 style="margin-bottom:0pt;">Saina Sunny</h1>
-    <p style="margin-top:0pt;">
-      saina.sunny [at] ulb [dot] be <br />
-    </p>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Saina Sunny home">Saina Sunny</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#background">Background</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#news">News</a>
+        <a href="#slides">Posters &amp; Slides</a>
+      </div>
+      <a class="nav-action" href="pdfs/Saina_CV.pdf">
+        <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+        CV
+      </a>
+    </nav>
   </header>
 
-  <div class="abstract">
-    <h2>About Me</h2>
-    <p style="text-align: left;">
-      I am a post-doctoral researcher in the <a href="https://verif.ulb.ac.be">Formal Methods and Verification</a> research group at <a href="https://www.ulb.be">Université libre de Bruxelles</a>, working with <a href="https://verif.ulb.ac.be/efiliot/">Prof. Emmanuel Filiot</a> and <a href="https://gaperez64.github.io">Prof. Guillermo A. Pérez</a> on a research project funded by FWO and FNRS. <br><br>
-      
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Postdoctoral Researcher</p>
+          <h1 id="hero-title">Saina Sunny</h1>
+          <p class="hero-lede">
+            Theoretical computer science researcher working across formal methods, automata theory,
+            transducers, and formal languages.
+          </p>
 
-      I did my Ph.D. in Theoretical Computer Science in the School of Mathematics and Computer Science at <a href="https://www.iitgoa.ac.in/">Indian Institute of Technology Goa</a>, supervised by <a href="https://devmanuel.github.io">Dr. Amaldev Manuel</a>. <br><br>
-
-
-      
-      Before my Ph.D., I did my B.Tech in Computer Science and Engineering from the <a href="https://www.cet.ac.in">College of Engineering Trivandrum</a>, Kerala and worked for 3 years at <a href="https://www.oracle.com/in/corporate/">Oracle India Pvt. Ltd.</a>. <br><br>
-      
-
-
-      My research interests spans the theoretical foundations of computer science, particularly automata theory and formal languages. Outside research, I enjoy teaching, badminton, swimming, and exploring new places.<br><br>
-      
-      <div class="row" style="padding: 5pt;"><a class="buttonlink" href="pdfs/Saina_CV.pdf">Download CV</a></div>
-    </p>
-  </div>
-
-  <nav role="navigation" class="toc">
-    <h2>Contents</h2>
-    <ol>
-      <li><a href="#background">Background</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#teaching">Teaching</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#slides">Posters and Slides</a></li>
-      <!--
-      <li>
-        <a href="#class-based-elements">Class-based Elements</a>
-        <ol>
-          <li><a href="#author-abstract">Author and Abstract</a></li>
-          <li>
-            <a href="#tdpl">Theorems, Definitions and Proofs</a>
-            <ol>
-              <li><a href="#proofs-theorems">Proofs & Theo&shy;rems</a></li>
-              <li><a href="#lemmas">Lemmas</a></li>
-              <li><a href="#definitions">Definitions</a></li>
-            </ol>
-          </li>
-          <li><a href="#paragraphs">Paragraphs</a></li>
-          <li><a href="#text-justification">Text Justification</a></li>
-          <li><a href="#table-classes">Table Classes</a>
-            <ol>
-              <li><a href="#table-borders">Custom Table Bor&shy;ders</a></li>
-              <li><a href="#table-column-aligment">Table Column Align&shy;ment</a></li>
-            </ol>
-          </li>
-          <li><a href="#auto-hyphenation">Automatic Hyphenation</a></li>
-        </ol>
-      </li>
-      <li><a href="#language-support">Language Support</a></li>
-      <li><a href="#sidenotes">Sidenotes</a></li>
-      <li><a href="#dark-mode">Dark Mode</a></li>
-      <li><a href="#alternative-typeface">Alternative Typeface</a></li>
-      <li>
-        <a href="#html-elements">HTML Elements</a>
-        <ol>
-          <li><a href="#text-formatting">Text Formatting</a></li>
-          <li><a href="#blockquotes">Blockquotes</a></li>
-          <li><a href="#definition-lists">Definition Lists</a></li>
-          <li><a href="#tables">Tables</a></li>
-          <li><a href="#images">Images</a></li>
-        </ol>
-      </li>
-      <li>
-        <a href="#miscellaneous">Miscellaneous</a>
-        <ol>
-          <li><a href="#scroll-overflow">Scroll Overflow</a></li>
-          <li><a href="#syntax-highlighting">Syntax Highlighting</a></li>
-        </ol>
-      </li>
-      -->
-    </ol>
-  </nav>
-
-  <main>
-    <article>
-      <h2 id="background">Background</h2>
-      <ul>
-        <div class="scroll-wrapper">
-          <table>
-            <caption>Career Timeline</caption>
-            <tbody>
-              <tr>
-                <th scope="col">Timeline</th>
-                <th scope="col">Employment/Degree</th>
-                <th scope="col">Affliation</th>
-              </tr>
-              <tr>
-                <th scope="row">2025 - Present</th>
-                <td><code>Postdoctoral Researcher</code></td>
-                <td><code>Université Libre de Bruxelles</code></td>
-
-              </tr>
-              <tr>
-                <th scope="row">2019 - 2025</th>
-                <td><code>Ph.D</code></td>
-                <td><code>Indian Institute of Technology Goa</code></td>
-
-              </tr>
-              <tr>
-                <th scope="row">2018 - 2019</th>
-                <td><code>Member of Technical Staff</code></td>
-                <td><code>Oracle India Pvt Limited, Bangalore</code></td>
-              </tr>
-              <tr>
-                <th scope="row">2016 - 2018</th>
-                <td><code>Associate Quality Assurance Engineer</code></td>
-                <td><code>Oracle India Pvt Limited, Bangalore</code></td>
-              </tr>
-              <tr>
-                <th scope="row">2012 - 2016</th>
-                <td><code>B.Tech</code></td>
-                <td><code>College of Engineering Trivandrum, Kerala</code></td>
-              </tr>
-              <tr>
-                <th scope="row">2010 - 2012</th>
-                <td><code>Class 11-12</code></td>
-                <td><code>St. Antony's Public School, Kanjirapally</code></td>
-              </tr>
-              <tr>
-                <th scope="row">2000 - 2010</th>
-                <td><code>Class 1-10</code></td>
-                <td><code>Kendriya Vidyalaya</code></td>
-              </tr>
-              
-            </tbody>
-          </table>
-          
+          <dl class="hero-facts" aria-label="Profile details">
+            <div>
+              <dt>Email</dt>
+              <dd>saina.sunny [at] ulb [dot] be</dd>
             </div>
-        </div>
-      </ul>
-      <h2 id="publications">Publications</h2>
-      <ul>
-              <div class="summary">
-          <button class="collapsible">
-              <div class="row papertitle">Edit Distance of Fnite-Valued Transducers</div>
-              <div class="row" style="color:grey;">
-                Prince Mathew, S.</div>
-              <div class="row" style="color:grey;">
-                52nd EATCS International Colloquium on Automata, Languages and Programming (ICALP 2026)</div>
-              <div class="row"> London, United Kingdom. &#8226; 
-                  July 7-10, 2026 
-              </div>
-          
-          </button>
-          <div class="content">
-          <div class="abstract">
-          <h2>Abstract</h2>
-          <p>Transducers generalise automata by producing output word(s) for each input word, thereby defining
-a relation over words. A transducer is said to be finite-valued if, for every input word, it produces at
-most k output words, for some constant k. If k=1, then the transducer is said to be functional.
-The edit distance between two transducers is the minimal number of edits required to transform
-every output of one transducer into some output of the other, for each input word. This notion
-has been studied for functional transducers, where it is shown to be computable. However, it is
-uncomputable for transducers in general. In this work, we show the computability of the edit distance
-of finite-valued transducers, a class that is strictly more expressive than functional transducers. </p>
-          </div>
-          
-          
-          <div class="row" style="padding: 5pt;"><a class="buttonlink1" href="https://arxiv.org/pdf/2605.06269">Download</a></div>
-        </div>
-          </div>
-      </div>
-        <div class="summary">
-          <button class="collapsible">
-              <div class="row papertitle">Approximate Problems for Finite Transducers</div>
-              <div class="row" style="color:grey;">
-                Emmanuel Filiot, Ismaël Jecker, Khushraj Madnani, S.</div>
-              <div class="row" style="color:grey;">
-                52nd EATCS International Colloquium on Automata, Languages and Programming (ICALP 2025)</div>
-              <div class="row"> Aarhus, Denmark. &#8226; 
-                  July 8-11, 2025 
-              </div>
-          
-          </button>
-          <div class="content">
-          <div class="abstract">
-          <h2>Abstract</h2>
-          <p>Finite (word) state transducers extend finite state automata by defining a
-            binary relation over finite words, called rational
-              relation. If the rational relation is the graph of a function, this
-            function is said to be rational. The class of sequential functions is
-            a strict subclass of rational functions, defined as the functions
-            recognised by input-deterministic finite state
-            transducers. The class membership problems between those classes
-            are known to be decidable. We consider approximate versions of
-            these problems and show they are decidable as well. This includes
-            the approximate functionality problem, which asks whether
-            given a rational relation (by a transducer), is it close to a
-            rational function, and the approximate determinisation problem, which
-            asks whether a given rational function is close to a sequential
-            function. We prove decidability results for several classical
-            distances, including Hamming and Levenshtein edit distance. Finally, we
-            investigate the approximate uniformisation problem, which
-            asks, given a rational relation R, whether there exists a sequential
-            function that is close to some function uniformising R. As its
-            exact version, we prove that this problem is undecidable.</p>
-          </div>
-          
-          
-          <div class="row" style="padding: 5pt;"><a class="buttonlink1" href="https://doi.org/10.4230/LIPIcs.ICALP.2025.155">Download</a></div>
-        </div>
-          </div>
-      </div>
-      <div class="summary">
-        <button class="collapsible">
-            <div class="row papertitle">Deciding Conjugacy of a Rational Relation (Extended Abstract)</div>
-            <div class="row" style="color:grey;">
-              C Aiswarya, Amaldev Manuel, S.</div>
-            <div class="row" style="color:grey;">
-                28th International Conference on Developments in Language Theory (DLT 2024)</div>
-            <div class="row"> Göttingen, Germany. &#8226; 
-                August 12-16, 2024 
+            <div>
+              <dt>Current Role</dt>
+              <dd>Postdoctoral Researcher</dd>
             </div>
-            <!--<div class="row" style="color:grey;">
-                Jan 31, 2023 &#8226; arXiv
-            </div>-->
-        
-        </button>
-        <div class="content">
-        <div class="abstract">
-          <h2>Abstract</h2>
-          <p>A relation on the free monoid is conjugate if each pair of words in the relation is conjugate, i.e., cyclic shifts of each other. We show that checking whether a rational relation is conjugate is decidable. This extended abstract outlines the proof of this fact. A result of independent interest is a generalisation of the classical Lyndon-Schützenberger theorem from word combinatorics that equates conjugacy of a pair of words (u, v) and the existence of a word z (called a witness) such that uz=zv.
+            <div>
+              <dt>Affiliation</dt>
+              <dd>Université libre de Bruxelles</dd>
+            </div>
+            <div>
+              <dt>Research Group</dt>
+              <dd>Formal Methods and Verification</dd>
+            </div>
+          </dl>
+
+          <div class="hero-actions" aria-label="Profile actions">
+            <a class="button button-primary" href="pdfs/Saina_CV.pdf">
+              <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+              Download CV
+            </a>
+            <a class="button button-secondary" href="https://dblp.org/pid/352/3549.html">
+              <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+              View Publications
+            </a>
+          </div>
+        </div>
+
+        <figure class="hero-visual" aria-label="Profile photo">
+          <img class="profile-photo" src="image/profile.png" alt="Saina Sunny" width="2761" height="2761" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="about" aria-labelledby="about-title">
+      <div class="section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">About Me</p>
+          <h2 id="about-title">Researcher in formal methods and theoretical computer science.</h2>
+        </div>
+        <div class="prose">
+          <p>
+            I am a post-doctoral researcher in the <a href="https://verif.ulb.ac.be">Formal Methods and
+              Verification</a> research group at <a href="https://www.ulb.be">Université libre de Bruxelles</a>,
+            working with <a href="https://verif.ulb.ac.be/efiliot/">Prof. Emmanuel Filiot</a> and
+            <a href="https://gaperez64.github.io">Prof. Guillermo A. Pérez</a> on a research project funded by FWO
+            and FNRS.
+          </p>
+          <p>
+            I did my Ph.D. in Theoretical Computer Science in the School of Mathematics and Computer Science at
+            <a href="https://www.iitgoa.ac.in/">Indian Institute of Technology Goa</a>, supervised by
+            <a href="https://devmanuel.github.io">Dr. Amaldev Manuel</a>.
+          </p>
+          <p>
+            Before my Ph.D., I did my B.Tech in Computer Science and Engineering from the
+            <a href="https://www.cet.ac.in">College of Engineering Trivandrum</a>, Kerala and worked for 3 years at
+            <a href="https://www.oracle.com/in/corporate/">Oracle India Pvt. Ltd.</a>.
+          </p>
+          <p>
+            My research interests spans the theoretical foundations of computer science, particularly automata theory
+            and formal languages. Outside research, I enjoy teaching, badminton, swimming, and exploring new places.
           </p>
         </div>
-        <div class="row" style="padding: 5pt;"><a class="buttonlink1" href="https://link.springer.com/chapter/10.1007/978-3-031-66159-4_4">Download</a></div>
       </div>
+    </section>
+
+    <section class="section" id="publications" aria-labelledby="publications-title">
+      <div class="section-header">
+        <p class="eyebrow">Research Output</p>
+        <h2 id="publications-title">Publications</h2>
+      </div>
+
+      <div class="publication-list">
+        <details class="publication-card">
+          <summary>
+            <span class="publication-year">2026</span>
+            <span class="publication-main">
+              <span class="publication-title">Edit Distance of Fnite-Valued Transducers</span>
+              <span class="publication-authors">Prince Mathew, S.</span>
+              <span class="publication-venue">52nd EATCS International Colloquium on Automata, Languages and
+                Programming (ICALP 2026)</span>
+              <span class="publication-meta">London, United Kingdom. &bull; July 7-10, 2026</span>
+            </span>
+          </summary>
+          <div class="publication-abstract">
+            <h3>Abstract</h3>
+            <p>
+              Transducers generalise automata by producing output word(s) for each input word, thereby defining a
+              relation over words. A transducer is said to be finite-valued if, for every input word, it produces at
+              most k output words, for some constant k. If k=1, then the transducer is said to be functional. The edit
+              distance between two transducers is the minimal number of edits required to transform every output of one
+              transducer into some output of the other, for each input word. This notion has been studied for
+              functional transducers, where it is shown to be computable. However, it is uncomputable for transducers
+              in general. In this work, we show the computability of the edit distance of finite-valued transducers, a
+              class that is strictly more expressive than functional transducers.
+            </p>
+            <a class="button button-small" href="https://arxiv.org/pdf/2605.06269">
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              Download
+            </a>
+          </div>
+        </details>
+
+        <details class="publication-card">
+          <summary>
+            <span class="publication-year">2025</span>
+            <span class="publication-main">
+              <span class="publication-title">Approximate Problems for Finite Transducers</span>
+              <span class="publication-authors">Emmanuel Filiot, Ismaël Jecker, Khushraj Madnani, S.</span>
+              <span class="publication-venue">52nd EATCS International Colloquium on Automata, Languages and
+                Programming (ICALP 2025)</span>
+              <span class="publication-meta">Aarhus, Denmark. &bull; July 8-11, 2025</span>
+            </span>
+          </summary>
+          <div class="publication-abstract">
+            <h3>Abstract</h3>
+            <p>
+              Finite (word) state transducers extend finite state automata by defining a binary relation over finite
+              words, called rational relation. If the rational relation is the graph of a function, this function is
+              said to be rational. The class of sequential functions is a strict subclass of rational functions,
+              defined as the functions recognised by input-deterministic finite state transducers. The class membership
+              problems between those classes are known to be decidable. We consider approximate versions of these
+              problems and show they are decidable as well. This includes the approximate functionality problem, which
+              asks whether given a rational relation (by a transducer), is it close to a rational function, and the
+              approximate determinisation problem, which asks whether a given rational function is close to a
+              sequential function. We prove decidability results for several classical distances, including Hamming and
+              Levenshtein edit distance. Finally, we investigate the approximate uniformisation problem, which asks,
+              given a rational relation R, whether there exists a sequential function that is close to some function
+              uniformising R. As its exact version, we prove that this problem is undecidable.
+            </p>
+            <a class="button button-small" href="https://doi.org/10.4230/LIPIcs.ICALP.2025.155">
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              Download
+            </a>
+          </div>
+        </details>
+
+        <details class="publication-card">
+          <summary>
+            <span class="publication-year">2024</span>
+            <span class="publication-main">
+              <span class="publication-title">Deciding Conjugacy of a Rational Relation (Extended Abstract)</span>
+              <span class="publication-authors">C Aiswarya, Amaldev Manuel, S.</span>
+              <span class="publication-venue">28th International Conference on Developments in Language Theory (DLT
+                2024)</span>
+              <span class="publication-meta">Göttingen, Germany. &bull; August 12-16, 2024</span>
+            </span>
+          </summary>
+          <div class="publication-abstract">
+            <h3>Abstract</h3>
+            <p>
+              A relation on the free monoid is conjugate if each pair of words in the relation is conjugate, i.e.,
+              cyclic shifts of each other. We show that checking whether a rational relation is conjugate is decidable.
+              This extended abstract outlines the proof of this fact. A result of independent interest is a
+              generalisation of the classical Lyndon-Schützenberger theorem from word combinatorics that equates
+              conjugacy of a pair of words (u, v) and the existence of a word z (called a witness) such that uz=zv.
+            </p>
+            <a class="button button-small" href="https://link.springer.com/chapter/10.1007/978-3-031-66159-4_4">
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              Download
+            </a>
+          </div>
+        </details>
+
+        <details class="publication-card">
+          <summary>
+            <span class="publication-year">2024</span>
+            <span class="publication-main">
+              <span class="publication-title">Edit Distance of Finite State Transducers</span>
+              <span class="publication-authors">C Aiswarya, Amaldev Manuel, S.</span>
+              <span class="publication-venue">51st EATCS International Colloquium on Automata, Languages and
+                Programming (ICALP 2024)</span>
+              <span class="publication-meta">Tallinn, Estonia. &bull; July 8-12, 2024</span>
+            </span>
+          </summary>
+          <div class="publication-abstract">
+            <h3>Abstract</h3>
+            <p>
+              We lift metrics over words to metrics over word-to-word transductions, by defining the distance between
+              two transductions as the supremum of the distances of their respective outputs over all inputs. This
+              allows to compare transducers beyond equivalence. Two transducers are close (resp. k-close) with respect
+              to a metric if their distance is finite (resp. at most k). Over integer-valued metrics computing the
+              distance between transducers is equivalent to deciding the closeness and k-closeness problems. For common
+              integer-valued edit distances such as, Hamming, transposition, conjugacy and Levenshtein family of
+              distances, we show that the closeness and the k-closeness problems are decidable for functional
+              transducers. Hence, the distance with respect to these metrics is also computable. Finally, we relate the
+              notion of distance between functions to the notions of diameter of a relation and index of a relation in
+              another. We show that computing edit distance between functional transducers is equivalent to computing
+              diameter of a rational relation and both are a specific instance of the index problem of rational
+              relations.
+            </p>
+            <a class="button button-small" href="https://doi.org/10.4230/LIPIcs.ICALP.2024.125">
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              Download
+            </a>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="background" aria-labelledby="background-title">
+      <div class="section-header">
+        <p class="eyebrow">Background</p>
+        <h2 id="background-title">Career Timeline</h2>
+      </div>
+
+      <ol class="timeline" aria-label="Career timeline">
+        <li>
+          <time>2025 - Present</time>
+          <div>
+            <h3>Postdoctoral Researcher</h3>
+            <p>Université Libre de Bruxelles</p>
+          </div>
+        </li>
+        <li>
+          <time>2019 - 2025</time>
+          <div>
+            <h3>Ph.D</h3>
+            <p>Indian Institute of Technology Goa</p>
+          </div>
+        </li>
+        <li>
+          <time>2018 - 2019</time>
+          <div>
+            <h3>Member of Technical Staff</h3>
+            <p>Oracle India Pvt Limited, Bangalore</p>
+          </div>
+        </li>
+        <li>
+          <time>2016 - 2018</time>
+          <div>
+            <h3>Associate Quality Assurance Engineer</h3>
+            <p>Oracle India Pvt Limited, Bangalore</p>
+          </div>
+        </li>
+        <li>
+          <time>2012 - 2016</time>
+          <div>
+            <h3>B.Tech</h3>
+            <p>College of Engineering Trivandrum, Kerala</p>
+          </div>
+        </li>
+        <li>
+          <time>2010 - 2012</time>
+          <div>
+            <h3>Class 11-12</h3>
+            <p>St. Antony's Public School, Kanjirapally</p>
+          </div>
+        </li>
+        <li>
+          <time>2000 - 2010</time>
+          <div>
+            <h3>Class 1-10</h3>
+            <p>Kendriya Vidyalaya</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" id="teaching" aria-labelledby="teaching-title">
+      <div class="section-grid compact">
+        <div class="section-heading">
+          <p class="eyebrow">Teaching</p>
+          <h2 id="teaching-title">Teaching Assistant Experience</h2>
         </div>
-    </div>
-      <div class="summary">
-        <button class="collapsible">
-            <div class="row papertitle">Edit Distance of Finite State Transducers</div>
-            <div class="row" style="color:grey;">
-              C Aiswarya, Amaldev Manuel, S.</div>
-            <div class="row" style="color:grey;">
-                51st EATCS International Colloquium on Automata, Languages and Programming (ICALP 2024)
-            </div>
-            <div class="row">
-                Tallinn, Estonia. &#8226; July 8-12, 2024 
-            </div>
-        
-        </button>
-        <div class="content">
-        <div class="abstract">
-          <h2>Abstract</h2>
-          <p>We lift metrics over words to metrics over word-to-word transductions, by defining the distance between two transductions as the supremum of the distances of their respective outputs over all inputs. This allows to compare transducers beyond equivalence. Two transducers are close (resp. k-close) with respect to a metric if their distance is finite (resp. at most k). Over integer-valued metrics computing the distance between transducers is equivalent to deciding the closeness and k-closeness problems. For common integer-valued edit distances such as, Hamming, transposition, conjugacy and Levenshtein family of distances, we show that the closeness and the k-closeness problems are decidable for functional transducers. Hence, the distance with respect to these metrics is also computable. Finally, we relate the notion of distance between functions to the notions of diameter of a relation and index of a relation in another. We show that computing edit distance between functional transducers is equivalent to computing diameter of a rational relation and both are a specific instance of the index problem of rational relations. 
+        <div class="prose callout">
+          <p>
+            I served as a Teaching Assistant at IIT Goa from 2020 to 2024 as part of my PhD institute fellowship.
+            During this period, I primarily assisted with the Theory of Computation and Programming Language Paradigms
+            courses, which were offered to third-year B.Tech students at IIT Goa.
           </p>
         </div>
-        <div class="row" style="padding: 5pt;"><a class="buttonlink1" href="https://doi.org/10.4230/LIPIcs.ICALP.2024.125">Download</a></div>
       </div>
-        </div>
+    </section>
+
+    <section class="section section-muted" id="news" aria-labelledby="news-title">
+      <div class="section-header">
+        <p class="eyebrow">News</p>
+        <h2 id="news-title">Recent Updates</h2>
       </div>
-      </ul>
 
+      <div class="news-list">
+        <article class="news-item">
+          <time datetime="2026-05-13">13 May, 2026</time>
+          <p>Awarded FRS-FNRS Mobility and Congress funding for participating in Autobóz 2026</p>
+        </article>
+        <article class="news-item">
+          <time datetime="2026-04-24">24 April, 2026</time>
+          <p>Presented our work on "Theory of Hanoi omega-automata and games" in the CFV Seminar at ULB, Belgium.</p>
+        </article>
+        <article class="news-item">
+          <time datetime="2026-04-20">20 April, 2026</time>
+          <p>Our paper titled "Edit distance of finite-valued transducers" got accepted for publication at ICALP 2026.
+          </p>
+        </article>
+        <article class="news-item">
+          <time datetime="2026-04-10">10 April, 2026</time>
+          <p>Gave a talk on "Approximate problems for finite transducers" in the Automata Seminar at IRIF, Paris.</p>
+        </article>
+        <article class="news-item">
+          <time datetime="2025-11-05">5 November, 2025</time>
+          <p>Joined Université libre de Bruxelles (ULB) as a Postdoctoral Researcher.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2025-09-03">3 September, 2025</time>
+          <p>Presented "Approximate problems for finite transducers" at Highlights of Logic, Games and Automata
+            (Highlights 2025), delivered online".</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2025-07-25">25 July, 2025</time>
+          <p>Successfully defended my Ph.D. :-).</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2025-07-18">18 July, 2025</time>
+          <p>Visited TIFR from 16-22 July and presented the work on "Approximate problems for finite transducers".</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2025-07-10">10 July, 2025</time>
+          <p>Presented paper "Approximate problems for finite transducers" at ICALP 2025 in Aarhus University,
+            Denmark".</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2025-06-24">24 June, 2025</time>
+          <p>Was part of the STCS Vigyan Vidushi 2025 mentoring session as an invited mentor.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2025-05-13">13 May, 2025</time>
+          <p>ACM/IARCS travel grant approved for ICALP 2025.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2025-05-02">2 May, 2025</time>
+          <p>Received ACM-W scholarship to attend ICALP 2025.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2025-04-14">14 April, 2025</time>
+          <p>Paper "Approximate Problems for Finite Transducers" accepted at ICALP 2025, Aarhus, Denmark (July
+            8-11).</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2025-03-06">6 March, 2025</time>
+          <p>Presented poster at Goa Research Scholar Meet 2025, Panjim, organized by Vidnyan Dhara.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2025-02-27">27-28 February, 2025</time>
+          <p>Gave a lightning talk and presented a poster at ACM India ARCS 2025, PSG Tech, Coimbatore.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2024-11-20">20 November, 2024</time>
+          <p>Invited to present poster on "Edit Distance of Finite-State Transducers" at ACM India ARCS 2025.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2024-11-05">5 November, 2024</time>
+          <p>Invited to submit full version of "Deciding Conjugacy of a Rational Relation" to Information and
+            Computation special issue for DLT.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2024-09-18">18 September, 2024</time>
+          <p>Gave a talk at Highlights of Logic, Games and Automata 2024, LaBRI, University of Bordeaux, France.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2024-09-10">10 September, 2024</time>
+          <p>Gave a talk at Université libre de Bruxelles, Belgium.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2024-07-09">9 July, 2024</time>
+          <p>Gave talks at both Women in Logic Workshop and ICALP in Tallinn, Estonia.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2023-06-29">29 June, 2023</time>
+          <p>Submission to Highlights 2024 accepted for presentation.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2024-06-03">3-7 June, 2024</time>
+          <p>Attended 10th Indian School of Logic and its Application at IIT Goa.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2024-05-22">22 May, 2024</time>
+          <p>Received ACM/IARCS travel grant for ICALP 2024 attendance.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2024-05-15">15 May, 2024</time>
+          <p>Received WiL funding to attend Women in Logic 2024 workshop.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2024-05-14">14 May, 2024</time>
+          <p>Our paper "Deciding Conjugacy of a Rational Relation" accepted for presentation at Women in Logic 2024.
+          </p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2024-05-10">10 May, 2024</time>
+          <p>Invited to present "Edit Distance of Finite State Transducers" at Highlights of Language Theory, DLT
+            2024.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2024-05-08">8 May, 2024</time>
+          <p>Our paper "Deciding Conjugacy of a Rational Relation" accepted for presentation and proceedings at DLT
+            2024.</p>
+        </article>
+        <article class="news-item extra-news" hidden>
+          <time datetime="2024-04-14">14 April, 2024</time>
+          <p>Our paper "Edit Distance of Finite State Transducers" accepted for publication at ICALP 2024, Tallinn,
+            Estonia (July 8-12).</p>
+        </article>
+      </div>
 
-      <h2 id="teaching">Teaching</h2>
-      <ul>
-      <p> I served as a Teaching Assistant at IIT Goa from 2020 to 2024 as part of my PhD institute fellowship. During this period, I primarily assisted with the Theory of Computation and Programming Language Paradigms courses, which were offered to third-year B.Tech students at IIT Goa.</p>
-    </ul>
+      <button class="button button-secondary news-toggle" type="button" data-news-toggle aria-expanded="false">
+        <i class="fa-solid fa-list" aria-hidden="true"></i>
+        Read more
+      </button>
+    </section>
 
-      <h2 id="news">News</h2>
-      <ul>
-        <marquee behavior="scroll" direction="up" scrollamount="2" height="200px" onmouseover="this.stop();" onmouseout="this.start();">
-          <p class="news-item"><span>&#128240; <em>13 May, 2026:</em> Awarded FRS-FNRS Mobility and Congress funding for participating in Autobóz 2026</span></p>
-        <p class="news-item"><span>&#128240; <em>24 April, 2026:</em> Presented our work on "Theory of Hanoi omega-automata and games" in the CFV Seminar at ULB, Belgium.</span></p>
-        <p class="news-item"><span>&#128240; <em>20 April, 2026:</em> Our paper titled "Edit distance of finite-valued transducers" got accepted for publication at ICALP 2026.</span></p>
-        <p class="news-item"><span>&#128240; <em>10 April, 2026:</em> Gave a talk on "Approximate problems for finite transducers" in the Automata Seminar at IRIF, Paris.</span></p>
-        <p class="news-item"><span>&#128240; <em>5 November, 2025:</em> Joined Université libre de Bruxelles (ULB) as a Postdoctoral Researcher.</span></p>
-        <p class="news-item"><span>&#128240; <em>3 September, 2025:</em> Presented "Approximate problems for finite transducers" at Highlights of Logic, Games and Automata (Highlights 2025), delivered online".</span></p>
-        <p class="news-item"><span>&#128240; <em>25 July, 2025:</em> Successfully defended my Ph.D. :-).</span></p>
-        <p class="news-item"><span>&#128240; <em>18 July, 2025:</em> Visited TIFR from 16-22 July and presented the work on "Approximate problems for finite transducers".</span></p>
-        <p class="news-item"><span>&#128240; <em>10 July, 2025:</em> Presented paper "Approximate problems for finite transducers" at ICALP 2025 in Aarhus University, Denmark".</span></p>
-        <p class="news-item"><span>&#128240; <em>24 June, 2025:</em> Was part of the STCS Vigyan Vidushi 2025 mentoring session as an invited mentor.</span></p>
-        <p class="news-item"><span>&#128240; <em>13 May, 2025:</em> ACM/IARCS travel grant approved for ICALP 2025.</span></p>
-        <p class="news-item"><span>&#128240; <em> 2 May, 2025:</em>  Received ACM-W scholarship to attend ICALP 2025.</span></p>
-        <p class="news-item"><span>&#128240; <em> 14 April, 2025:</em>  Paper "Approximate Problems for Finite Transducers" accepted at ICALP 2025, Aarhus, Denmark (July 8–11).</span> </p>
-        <p class="news-item"><span>&#128240;<em> 6 March, 2025:</em> Presented poster at Goa Research Scholar Meet 2025, Panjim, organized by Vidnyan Dhara.</span></p>
-        <p class="news-item"><span>&#128240;<em> 27-28 February, 2025:</em> Gave a lightning talk and presented a poster at ACM India ARCS 2025, PSG Tech, Coimbatore.</span></p>
-        <div class="news-itemhidden" id="news-itemhidden">
-        <p><span>&#128240; <em> 20 November, 2024:</em> Invited to present poster on "Edit Distance of Finite-State Transducers" at ACM India ARCS 2025.</span></p>
-        <p><span>&#128240; <em> 5 November, 2024:</em> Invited to submit full version of "Deciding Conjugacy of a Rational Relation" to Information and Computation special issue for DLT.</span></p>
-        <p> <span>&#128240;<em> 18 September, 2024:</em> Gave a talk at Highlights of Logic, Games and Automata 2024, LaBRI, University of Bordeaux, France.</span></p>
-        <p> <span>&#128240; <em> 10 September, 2024:</em> Gave a talk at Université libre de Bruxelles, Belgium.</span></p>
-        <p> <span>&#128240; <em> 9 July, 2024:</em> Gave talks at both Women in Logic Workshop and ICALP in Tallinn, Estonia.</span></p>
-        <p> <span>&#128240; <em> 29 June, 2023:</em> Submission to Highlights 2024 accepted for presentation.</span></p>
-        <p><span>&#128240; <em> 3-7 June, 2024:</em> Attended 10th Indian School of Logic and its Application at IIT Goa.</span></p>
-        <p> <span>&#128240; <em> 22 May, 2024:</em> Received ACM/IARCS travel grant for ICALP 2024 attendance.</span></p>
-        <p><span>&#128240; <em>15 May, 2024:</em> Received WiL funding to attend Women in Logic 2024 workshop. </span></p>
-        <p> <span>&#128240; <em>14 May, 2024:</em> Our paper "Deciding Conjugacy of a Rational Relation" accepted for presentation at Women in Logic 2024.</span></p>
-        <p> <span>&#128240; <em> 10 May, 2024:</em> Invited to present "Edit Distance of Finite State Transducers" at Highlights of Language Theory, DLT 2024.</span></p>
-        <p> <span>&#128240; <em> 8 May, 2024:</em> Our paper "Deciding Conjugacy of a Rational Relation" accepted for presentation and proceedings at DLT 2024. </span></p> 
-        <p> <span>&#128240; <em>14 April, 2024:</em> Our paper "Edit Distance of Finite State Transducers" accepted for publication at ICALP 2024, Tallinn, Estonia (July 8–12).</span></p> 
-        </div></marquee>
-        <div class="btn-container">
-          <button id="show-more-btn" onclick="toggleNews(true)">Show more</button>
-          <button id="show-less-btn" onclick="toggleNews(false)" style="display: none;">Show less</button>
-        </div>
-      </ul>
-      
-        <script>
-          function toggleNews(show) {
-            const extra = document.getElementById("news-itemhidden");
-            const btnMore = document.getElementById("show-more-btn");
-            const btnLess = document.getElementById("show-less-btn");
-      
-            if (show) {
-              extra.style.display = "block";
-              btnMore.style.display = "none";
-              btnLess.style.display = "inline-block";
-            } else {
-              extra.style.display = "none";
-              btnMore.style.display = "inline-block";
-              btnLess.style.display = "none";
-            }
-          }
-        </script>
+    <section class="section" id="slides" aria-labelledby="slides-title">
+      <div class="section-header">
+        <p class="eyebrow">Posters and Slides</p>
+        <h2 id="slides-title">Talk Materials</h2>
+      </div>
 
-      <h2 id="slides">Posters and Slides</h2>
-      <ul>
-      <p><i class="fas fa-file-powerpoint"></i>
-        Ph.D. Thesis: <a href="pdfs/thesis short1.pdf" target="_blank"> Summary </a>, <a href="pdfs/ThesisSigned.pdf" target="_blank"> Full Version </a>  and <a href="pdfs/Sainadefense.pdf" target="_blank"> Slide </a></p>
-      <p><i class="fas fa-file-powerpoint"></i>
-        Approximate problems for finite transducers: <a href="pdfs/Approx.pdf" target="_blank"> Slide </a> </p>
+      <div class="resource-grid">
+        <article class="resource-item">
+          <i class="fa-solid fa-file-powerpoint resource-icon" aria-hidden="true"></i>
+          <h3>Ph.D. Thesis</h3>
+          <p>
+            <a href="pdfs/thesis short1.pdf" target="_blank" rel="noopener noreferrer">Summary</a>,
+            <a href="pdfs/ThesisSigned.pdf" target="_blank" rel="noopener noreferrer">Full Version</a>
+            and <a href="pdfs/Sainadefense.pdf" target="_blank" rel="noopener noreferrer">Slide</a>
+          </p>
+        </article>
+        <article class="resource-item">
+          <i class="fa-solid fa-file-powerpoint resource-icon" aria-hidden="true"></i>
+          <h3>Approximate problems for finite transducers</h3>
+          <p><a href="pdfs/Approx.pdf" target="_blank" rel="noopener noreferrer">Slide</a></p>
+        </article>
+        <article class="resource-item">
+          <i class="fa-solid fa-file-powerpoint resource-icon" aria-hidden="true"></i>
+          <h3>Edit distance of finite state transducers</h3>
+          <p>
+            <a href="pdfs/Edit_Distance_Poster.pdf" target="_blank" rel="noopener noreferrer">Poster</a>
+            and <a href="pdfs/edit-distance Highlights DLT.pdf" target="_blank" rel="noopener noreferrer">Slide</a>
+          </p>
+        </article>
+        <article class="resource-item">
+          <i class="fa-solid fa-file-powerpoint resource-icon" aria-hidden="true"></i>
+          <h3>Deciding conjugacy of a rational relation</h3>
+          <p>
+            <a href="pdfs/Highlights_Poster.pdf" target="_blank" rel="noopener noreferrer">Poster</a>
+            and <a href="pdfs/1 - Sunny.pdf" target="_blank" rel="noopener noreferrer">Slide</a>
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
 
-      <p><i class="fas fa-file-powerpoint"></i>
-        Edit distance of finite state transducers: <a href="pdfs/Edit_Distance_Poster.pdf" target="_blank"> Poster</a> and <a href="pdfs/edit-distance Highlights DLT.pdf" target="_blank"> Slide </a> </p>
+  <footer class="site-footer">
+    <p>&copy; Saina Sunny</p>
+    <a href="#top">Back to top</a>
+  </footer>
 
-      <p><i class="fas fa-file-powerpoint"></i>
-        Deciding conjugacy of a rational relation: <a href="pdfs/Highlights_Poster.pdf" target="_blank"> Poster</a>  and <a href="pdfs/1 - Sunny.pdf" target="_blank"> Slide </a></p>
-      </ul>
-        
-    </code></pre></article></main>
+  <script>
+    const newsToggle = document.querySelector("[data-news-toggle]");
+    const extraNews = document.querySelectorAll(".extra-news");
 
-
- 
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script async src="prism/prism.js"></script>
-
+    if (newsToggle) {
+      newsToggle.addEventListener("click", () => {
+        const expanded = newsToggle.getAttribute("aria-expanded") === "true";
+        extraNews.forEach((item) => {
+          item.hidden = expanded;
+        });
+        newsToggle.setAttribute("aria-expanded", String(!expanded));
+        newsToggle.innerHTML = expanded
+          ? '<i class="fa-solid fa-list" aria-hidden="true"></i> Read more'
+          : '<i class="fa-solid fa-list" aria-hidden="true"></i> Show less';
+      });
+    }
+  </script>
 </body>
 
 </html>
-<script>
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
-  
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.maxHeight){
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-      } 
-    });
-  }
-  </script>

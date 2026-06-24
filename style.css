@@ -1,906 +1,816 @@
-/*!
- * LaTeX.css (https://latex.vercel.app/)
- *
- * Source: https://github.com/vincentdoerig/latex-css
- * Licensed under MIT (https://github.com/vincentdoerig/latex-css/blob/master/LICENSE)
-*/
-
 @font-face {
-  font-family: 'Latin Modern';
+  font-display: swap;
+  font-family: "Libertinus";
   font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('./fonts/LM-regular.woff2') format('woff2'),
-    url('./fonts/LM-regular.woff') format('woff'),
-    url('./fonts/LM-regular.ttf') format('truetype');
+  font-weight: 400;
+  src: url("./fonts/Libertinus-regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Latin Modern';
-  font-style: italic;
-  font-weight: normal;
   font-display: swap;
-  src: url('./fonts/LM-italic.woff2') format('woff2'),
-    url('./fonts/LM-italic.woff') format('woff'),
-    url('./fonts/LM-italic.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Latin Modern';
+  font-family: "Libertinus";
   font-style: normal;
-  font-weight: bold;
-  font-display: swap;
-  src: url('./fonts/LM-bold.woff2') format('woff2'),
-    url('./fonts/LM-bold.woff') format('woff'),
-    url('./fonts/LM-bold.ttf') format('truetype');
+  font-weight: 700;
+  src: url("./fonts/Libertinus-bold.woff2") format("woff2");
 }
 
-@font-face {
-  font-family: 'Latin Modern';
-  font-style: italic;
-  font-weight: bold;
-  font-display: swap;
-  src: url('./fonts/LM-bold-italic.woff2') format('woff2'),
-    url('./fonts/LM-bold-italic.woff') format('woff'),
-    url('./fonts/LM-bold-italic.ttf') format('truetype');
+:root {
+  --bg: #f4fafc;
+  --surface: #ffffff;
+  --surface-muted: #e8f4f8;
+  --ink: #102a33;
+  --muted: #526873;
+  --line: #cfe3ea;
+  --primary: #006d8f;
+  --primary-strong: #004f6b;
+  --accent: #0e9fb3;
+  --accent-soft: #e4f7fa;
+  --gold: #2aa6a1;
+  --shadow: 0 18px 55px rgba(16, 42, 51, 0.13);
+  --radius: 8px;
+  --max-width: 1180px;
 }
 
-@font-face {
-  font-family: 'Libertinus';
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('./fonts/Libertinus-regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Libertinus';
-  font-style: italic;
-  font-weight: normal;
-  font-display: swap;
-  src: url('./fonts/Libertinus-italic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Libertinus';
-  font-style: normal;
-  font-weight: bold;
-  font-display: swap;
-  src: url('./fonts/Libertinus-bold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Libertinus';
-  font-style: italic;
-  font-weight: bold;
-  font-display: swap;
-  src: url('./fonts/Libertinus-bold-italic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Libertinus';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('./fonts/Libertinus-semibold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Libertinus';
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-  src: url('./fonts/Libertinus-semibold-italic.woff2') format('woff2');
-}
-
-/* Box sizing rules */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-:root {
-  --body-color: hsl(0, 5%, 10%);
-  --body-bg-color: hsl(210, 20%, 98%);
-  --link-visited: hsl(232, 97%, 39%);
-  --link-focus-outline: hsl(220, 90%, 52%);
-  --pre-bg-color: hsl(210, 28%, 93%);
-  --kbd-bg-color: hsl(210, 5%, 100%);
-  --kbd-border-color: hsl(210, 5%, 70%);
-  --table-border-color: black;
-  --border-width-thin: 1.36px;
-  --border-width-thick: 2.27px;
-  --sidenote-target-border-color: hsl(55, 55%, 70%);
-  --footnotes-border-color: hsl(0, 0%, 39%);
-  --text-indent-size: 1.463rem; /* In 12pt [Latin Modern font] LaTeX article
-  \parindent =~ 17.625pt; taking also into account the ratio
-  1pt[LaTeX] = (72 / 72.27) * 1pt[HTML], with default 12pt/1rem LaTeX.css font
-  size, the identation value in rem CSS units is:
-  \parindent =~ 17.625 * (72 / 72.27) / 12 = 1.463rem. */
-}
-
-.latex-dark {
-  --body-color: hsl(0, 0%, 86%);
-  --body-bg-color: hsl(0, 0%, 16%);
-  --link-visited: hsl(196 80% 77%);
-  --link-focus-outline: hsl(215, 63%, 73%);
-  --pre-bg-color: hsl(0, 1%, 25%);
-  --kbd-bg-color: hsl(0, 0%, 16%);
-  --kbd-border-color: hsl(210, 5%, 70%);
-  --table-border-color: white;
-  --sidenote-target-border-color: hsl(0, 0%, 59%);
-  --footnotes-border-color: hsl(0, 0%, 59%);
-  --proof-symbol-filter: invert(80%);
-}
-
-@media (prefers-color-scheme: dark) {
-   .latex-dark-auto {
-    --body-color: hsl(0, 0%, 86%);
-    --body-bg-color: hsl(0, 0%, 16%);
-    --link-visited: hsl(196 80% 77%);
-    --link-focus-outline: hsl(215, 63%, 73%);
-    --pre-bg-color: hsl(0, 1%, 25%);
-    --kbd-bg-color: hsl(0, 0%, 16%);
-    --kbd-border-color: hsl(210, 5%, 70%);
-    --table-border-color: white;
-    --sidenote-target-border-color: hsl(0, 0%, 59%);
-    --footnotes-border-color: hsl(0, 0%, 59%);
-    --proof-symbol-filter: invert(80%);
-  }
-}
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul[class],
-ol[class],
-li,
-figure,
-figcaption,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Make default font-size 1rem and add smooth scrolling to anchors */
 html {
-  font-size: 1rem;
-}
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-a{
-  color:blue;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  background: var(--bg);
+  color: var(--ink);
+  letter-spacing: 0;
+  scroll-behavior: smooth;
 }
 
-body.libertinus {
-  font-family: 'Libertinus', Georgia, Cambria, 'Times New Roman', Times, serif;
-}
-
-.text-justify {
-  text-align: justify;
-}
-
-.summary {
-  font-size: 0.85rem;
-  line-height: 1.5;
-  margin: 0.5rem 0;
-  padding-bottom: 20pt;
-}
-
-.buttonlink{
-  padding:2pt;
-  width: 80pt;
-  margin-left: 44% !important;
-  margin-top:5pt;
-  border-radius: 3pt;
-  border: 1pt solid black;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  margin-left:0;
-}
-
-.buttonlink:hover{
-  background-color: hsl(210, 90%, 48%);
-  color: white;
-  box-shadow: 0px 0px 5pt hsl(210, 20%, 98%);
-}
-
-.buttonlink1{
-  padding:2pt;
-  width: 80pt;
-  margin-left: 0px !important;
-  margin-top:5pt;
-  border-radius: 3pt;
-  border: 1pt solid black;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  margin-left:0;
-}
-
-.buttonlink1:hover{
-  background-color: hsl(210, 90%, 48%);
-  color: white;
-  box-shadow: 0px 0px 5pt hsl(210, 20%, 98%);
-}
 body {
-  font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
-  line-height: 1.8;
-  padding:0;
-  height:100%;
-  max-width: 120ch;
-  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
   overflow-x: hidden;
-  margin: 0 auto;
-  padding: 2rem 1.25rem;
-
-  counter-reset: theorem definition sidenote-counter;
-
-  color: var(--body-color);
-  background-color: var(--body-bg-color);
-
   text-rendering: optimizeLegibility;
-
-  /* Allow automatic hyphenation for all text in the document */
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
 }
 
-p {
-  margin-top: 1rem;
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(0, 109, 143, 0.07) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(14, 159, 179, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 65%);
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 65%);
 }
 
-/* Indents paragraphs like in LaTeX documents*/
-.indent-pars p {
-  text-indent: var(--text-indent-size);
-}
-
-.indent-pars p.no-indent,
-p.no-indent {
-  text-indent: 0;
-}
-
-.indent-pars ol p,
-.indent-pars ul p {
-  text-indent: 0;
-}
-
-.indent-pars h2 + p,
-.indent-pars h3 + p,
-.indent-pars h4 + p {
-  text-indent: 0;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make links red */
-a,
-a:visited {
-  color: var(--link-visited);
-}
-
-a:focus {
-  outline-offset: 2px;
-  outline: 2px solid var(--link-focus-outline);
-}
-
-/* Allow line breaks between any two characters */
-.break-all {
-  /*
-    NOTE: Whith `break-all` value no hyphens are shown, even if the word breaks
-    at a hyphenation point
-  */
-  word-break: break-all;
-}
-
-/* Make images easier to work with */
 img {
-  max-width: 100%;
-  height: auto;
   display: block;
+  height: auto;
+  max-width: 100%;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
+a {
+  color: var(--primary);
+  font-weight: 650;
+  text-decoration: none;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid rgba(14, 159, 179, 0.36);
+  outline-offset: 3px;
+}
+
 button,
-textarea,
-select {
+summary {
   font: inherit;
 }
 
-/* Prevent textarea from overflowing */
-textarea {
-  width: 100%;
+.skip-link {
+  position: absolute;
+  z-index: 20;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  transform: translateY(-150%);
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: #ffffff;
 }
 
-/* Natural flow and rhythm in articles by default */
-article > * + * {
-  margin-top: 1em;
+.skip-link:focus {
+  transform: translateY(0);
 }
 
-/* Styles for inline code or code snippets */
-code,
-pre,
-kbd {
-  font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
-    monospace;
-  font-size: 0.75em;
-  hyphens: none;
-}
-pre {
-  padding: 1rem 1.4rem;
-  max-width: 100%;
-  overflow: auto;
-  border-radius: 4px;
-  background: var(--pre-bg-color);
-}
-pre code {
-  font-size: 0.95rem;
-  position: relative;
-}
-kbd {
-  background: var(--kbd-bg-color);
-  border: 1px solid var(--kbd-border-color);
-  border-radius: 2px;
-  padding: 2px 4px;
-  font-size: 0.75rem;
+.site-header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  border-bottom: 1px solid rgba(207, 227, 234, 0.9);
+  background: rgba(244, 250, 252, 0.92);
+  backdrop-filter: blur(18px);
 }
 
-/* Better tables */
-table:not(.borders-custom) {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: auto;
-  max-width: 100%;
-  border-top: var(--border-width-thick) solid var(--table-border-color);
-  border-bottom: var(--border-width-thick) solid var(--table-border-color);
-  /* display: block; */
-  overflow-x: auto; /* does not work because element is not block */
-  /* white-space: nowrap; */
-  counter-increment: caption;
-}
-/* add bottom border on column table headings  */
-table:not(.borders-custom) tr > th[scope='col'] {
-  border-bottom: var(--border-width-thin) solid var(--table-border-color);
-}
-/* add right border on row table headings  */
-table:not(.borders-custom) tr > th[scope='row'] {
-  border-right: var(--border-width-thin) solid var(--table-border-color);
-}
-table:not(.borders-custom) > tbody > tr:first-child > td,
-table:not(.borders-custom) > tbody > tr:first-child > th {
-  border-top: var(--border-width-thin) solid var(--table-border-color);
-}
-table:not(.borders-custom) > tbody > tr:last-child > td,
-table:not(.borders-custom) > tbody > tr:last-child > th {
-  border-bottom: var(--border-width-thin) solid var(--table-border-color);
+.nav-shell {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.25rem;
+  align-items: center;
+  width: min(var(--max-width), calc(100% - 2rem));
+  min-height: 72px;
+  margin: 0 auto;
 }
 
-th,
-td {
-  text-align: left;
-  padding: 0.5rem;
-  line-height: 1.1;
-}
-/* Table caption */
-caption {
-  text-align: left;
-  font-size: 0.923em;
-  /* border-bottom: 2pt solid #000; */
-  padding: 0 0.25em 0.25em;
-  width: 100%;
-  margin-left: 0;
+.brand {
+  color: var(--ink);
+  font-family: "Libertinus", Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
-caption::before {
-  content: 'Table ' counter(caption) '. ';
-  font-weight: bold;
+.brand:hover {
+  color: var(--primary);
+  text-decoration: none;
 }
 
-/* allow scroll on the x-axis */
-.scroll-wrapper {
-  overflow-x: auto;
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  min-width: 0;
 }
 
-/* if a table is wrapped in a scroll wrapper,
-  the table cells shouldn't wrap */
-.scroll-wrapper > table td {
-  white-space: nowrap;
+.nav-links a {
+  min-height: 40px;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
 }
 
-/* Table custom borders */
-table.borders-custom {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: auto;
-  max-width: 100%;
-  overflow-x: auto;
-  counter-increment: caption;
+.nav-links a:hover {
+  background: var(--surface-muted);
+  color: var(--primary-strong);
+  text-decoration: none;
 }
 
-.border-top-thick {
-  border-top: var(--border-width-thick) solid var(--table-border-color);
-}
-.border-right-thick {
-  border-right: var(--border-width-thick) solid var(--table-border-color);
-}
-.border-bottom-thick {
-  border-bottom: var(--border-width-thick) solid var(--table-border-color);
-}
-.border-left-thick {
-  border-left: var(--border-width-thick) solid var(--table-border-color);
-}
-
-.border-top-thin {
-  border-top: var(--border-width-thin) solid var(--table-border-color);
-}
-.border-right-thin {
-  border-right: var(--border-width-thin) solid var(--table-border-color);
-}
-.border-bottom-thin {
-  border-bottom: var(--border-width-thin) solid var(--table-border-color);
-}
-.border-left-thin {
-  border-left: var(--border-width-thin) solid var(--table-border-color);
-}
-
-/* Table column alignment */
-.col-1-l tr > :nth-child(1),
-.col-2-l tr > :nth-child(2),
-.col-3-l tr > :nth-child(3),
-.col-4-l tr > :nth-child(4),
-.col-5-l tr > :nth-child(5),
-.col-6-l tr > :nth-child(6),
-.col-7-l tr > :nth-child(7),
-.col-8-l tr > :nth-child(8),
-.col-9-l tr > :nth-child(9),
-.col-10-l tr > :nth-child(10),
-.col-11-l tr > :nth-child(11),
-.col-12-l tr > :nth-child(12) {
-  text-align: left;
-}
-.col-1-c tr > :nth-child(1),
-.col-2-c tr > :nth-child(2),
-.col-3-c tr > :nth-child(3),
-.col-4-c tr > :nth-child(4),
-.col-5-c tr > :nth-child(5),
-.col-6-c tr > :nth-child(6),
-.col-7-c tr > :nth-child(7),
-.col-8-c tr > :nth-child(8),
-.col-9-c tr > :nth-child(9),
-.col-10-c tr > :nth-child(10),
-.col-11-c tr > :nth-child(11),
-.col-12-c tr > :nth-child(12) {
-  text-align: center;
-}
-.col-1-r tr > :nth-child(1),
-.col-2-r tr > :nth-child(2),
-.col-3-r tr > :nth-child(3),
-.col-4-r tr > :nth-child(4),
-.col-5-r tr > :nth-child(5),
-.col-6-r tr > :nth-child(6),
-.col-7-r tr > :nth-child(7),
-.col-8-r tr > :nth-child(8),
-.col-9-r tr > :nth-child(9),
-.col-10-r tr > :nth-child(10),
-.col-11-r tr > :nth-child(11),
-.col-12-r tr > :nth-child(12) {
-  text-align: right;
-}
-
-.news-itemhidden {
-  display: none;
-}
-
-.btn {
-  margin-top: 10px;
-  padding: 6px 12px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 4px;
+.nav-action,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.68rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
   cursor: pointer;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.nav-action,
+.button-primary {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.nav-action:hover,
+.button-primary:hover {
+  background: var(--primary-strong);
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.button-secondary {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.button-secondary:hover {
+  border-color: rgba(14, 159, 179, 0.34);
+  background: var(--accent-soft);
+  color: var(--accent);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.button-small {
+  min-height: 38px;
+  padding: 0.56rem 0.78rem;
+  border-color: rgba(0, 109, 143, 0.25);
+  background: var(--surface);
+  color: var(--primary-strong);
   font-size: 0.9rem;
 }
 
-.btn-container {
-  margin-top: 10px;
+.button-small:hover {
+  background: var(--primary);
+  color: #ffffff;
+  text-decoration: none;
 }
 
-/* Format figure captions (based on table captions) */
-figure {
-  counter-increment: figcaption;
-  text-align: center;
-}
-figcaption {
-  text-align: center;
-  font-size: 0.923em;
-  padding: 0.25em 0.25em 0;
-  width: 100%;
-
-}
-figcaption::before {
-  content: 'Figure ' counter(figcaption) '. ';
-  font-weight: bold;
+.hero {
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(120deg, rgba(232, 244, 248, 0.96), rgba(255, 255, 255, 0.92)),
+    var(--bg);
 }
 
-/* Center align the title */
-h1:first-child {
-  text-align: center;
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 390px;
+  gap: 4rem;
+  align-items: center;
+  width: min(var(--max-width), calc(100% - 2rem));
+  min-height: min(680px, calc(100vh - 72px));
+  margin: 0 auto;
+  padding: 4.5rem 0;
 }
 
-/* Nested ordered list for ToC */
-nav ol {
-  counter-reset: item;
-  padding-left: 2rem;
-}
-nav ol > li {
-  display: block;
-}
-nav ol > li::before {
-  content: counters(item, '.') ' ';
-  counter-increment: item;
-  padding-right: 0.85rem;
+.hero-copy {
+  max-width: 760px;
+  min-width: 0;
 }
 
-/* Center definitions (most useful for display equations) */
-dl dd {
-  text-align: center;
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-/* Theorem */
-.theorem {
-  counter-increment: theorem;
-  display: block;
-  margin: 12px 0;
-  font-style: italic;
-}
-.theorem::before {
-  content: 'Theorem ' counter(theorem) '. ';
-  font-weight: bold;
-  font-style: normal;
-}
-
-/* Lemma */
-.lemma {
-  counter-increment: theorem;
-  display: block;
-  margin: 12px 0;
-  font-style: italic;
-}
-.lemma::before {
-  content: 'Lemma ' counter(theorem) '. ';
-  font-weight: bold;
-  font-style: normal;
-}
-
-/* Proof */
-.proof {
-  display: block;
-  margin: 12px 0;
-  font-style: normal;
-  position: relative;
-}
-.proof::before {
-  content: 'Proof. ' attr(title);
-  font-style: italic;
-}
-.proof::after {
-  content: '◾️';
-  filter: var(--proof-symbol-filter);
-  position: absolute;
-  right: -12px;
-  bottom: -2px;
-}
-
-/* Definition */
-.definition {
-  counter-increment: definition;
-  display: block;
-  margin: 12px 0;
-  font-style: normal;
-}
-.definition::before {
-  content: 'Definition ' counter(definition) '. ';
-  font-weight: bold;
-  font-style: normal;
-}
-
-/* Center align author name, use small caps and add vertical spacing  */
-.author {
-  margin: 0.85rem 0;
-  font-variant-caps: small-caps;
-  text-align: center;
-}
-
-/* Sidenotes */
-
-.sidenote {
-  font-size: 0.8rem;
-  float: right;
-  clear: right;
-  width: 18vw;
-  margin-right: -20vw;
-  margin-bottom: 1em;
-  text-indent: 0;
-  /* Right sidenotes explicitly aligned to left for wide screens */
-  text-align: left;
-}
-
-.sidenote.left {
-  float: left;
-  margin-left: -20vw;
-  margin-bottom: 1em;
-  text-indent: 0;
-  /* Left sidenotes explicitly aligned to right for wide screens */
-  text-align: right;
-}
-
-.collapsible {
-  width: 100%; /* or specify like 600px, 80%, etc. */
-  display: block; /* ensures it behaves like a box */
-}
-
-/* Justify all sidenotes for wide screens when `text-justify` class is used */
-body.text-justify .sidenote,
-body.text-justify .sidenote.left {
-    text-align: justify;
-}
-
-/* (WIP) add border when a sidenote is clicked on */
-.sidenote:target {
-  border: var(--sidenote-target-border-color) 1.5px solid;
-  padding: 0 .5rem;
-  scroll-margin-block-start: 10rem;
-}
-
-/* sidenote counter */
-.sidenote-number {
-  counter-increment: sidenote-counter;
-}
-
-.sidenote-number::after,
-.sidenote::before {
-  position: relative;
-  vertical-align: baseline;
-}
-
-/* add number in main content */
-.sidenote-number::after {
-  content: counter(sidenote-counter);
-  font-size: 0.7rem;
-  top: -0.5rem;
-  left: 0.1rem;
-}
-
-/* add number in front of the sidenote */
-.sidenote-number ~ .sidenote::before {
-  content: counter(sidenote-counter) ' ';
-  font-size: 0.7rem;
-  top: -0.5rem;
-}
-
-label.sidenote-toggle:not(.sidenote-number) {
-  display: none;
-}
-
-/* sidenotes inside blockquotes are indented more */
-blockquote .sidenote {
-  margin-right: -24vw;
-  width: 18vw;
-}
-
-
-label.sidenote-toggle {
-  display: inline;
-  cursor: pointer;
-}
-
-input.sidenote-toggle {
-  display: none;
-}
-
-@media (max-width: 1050px) {
-  label.sidenote-toggle:not(.sidenote-number) {
-    display: inline;
-  }
-  .sidenote {
-    display: none;
-  }
-  .sidenote-toggle:checked + .sidenote {
-    display: block;
-    margin: 0.5rem 1.25rem 1rem 0.5rem;
-    float: left;
-    left: 1rem;
-    clear: both;
-    width: 95%;
-  }
-
-  /* All sidenotes explicitly aligned to left for narrow screens */
-  .sidenote-toggle:checked + .sidenote.left {
-    text-align: left;
-  }
-
-  /* Justify all sidenotes for narrow screens when `text-justify` class is used */
-  body.text-justify .sidenote-toggle:checked + .sidenote.left {
-    text-align: justify;
-  }
-
-  /* tweak indentation of sidenote inside a blockquote */
-  blockquote .sidenote {
-    margin-right: -25vw;
-    width: 16vw;
-  }
-}
-
-.collapsible {
-  background-color: rgb(255, 255, 255);
-  color: black;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.active, .collapsible:hover {
-  background-color: rgb(213, 216, 219);
-}
-
-.collapsible:after {
-  content: '\002B';
-  color: black;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
-.active:after {
-  content: "\2212";
-}
-
-.content {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 1s ease-out;
-  background-color: #f1f1f1;
-}
-
-/* Make footnote text smaller */
-.footnotes p {
-  line-height: 1.5;
-  font-size: 0.85rem;
-  margin-bottom: 0.4rem;
-}
-.footnotes {
-  border-top: 1px solid var(--footnotes-border-color);
-}
-
-/* Center title and paragraph */
-.abstract,
-.abstract p {
-  text-align: center;
+h1,
+h2,
+h3,
+p {
   margin-top: 0;
 }
 
-.abstract > h2 {
-  font-size: 1rem;
-  margin-bottom: -0.2rem;
-}
-
-/* Format the LaTeX symbol correctly (a higher up, e lower) */
-.latex span:nth-child(1) {
-  text-transform: uppercase;
-  font-size: 0.75em;
-  vertical-align: 0.28em;
-  margin-left: -0.48em;
-  margin-right: -0.15em;
-  line-height: 1ex;
-}
-
-.latex span:nth-child(2) {
-  text-transform: uppercase;
-  vertical-align: -0.5ex;
-  margin-left: -0.1667em;
-  margin-right: -0.125em;
-  line-height: 1ex;
-}
-
-
-
-/* Prevent line breaks inside an element */
-.whitespace-nowrap {
-  white-space: nowrap;
-}
-
-/* Heading typography */
-h1 {
-  font-size: 2.5rem;
-  line-height: 3.25rem;
-  margin-bottom: 1.625rem;
-}
-
-h2 {
-  font-size: 1.7rem;
-  line-height: 2rem;
-  margin-top: 3rem;
-}
-
-h3 {
-  font-size: 1.4rem;
-  margin-top: 2.5rem;
-}
-
-h4 {
-  font-size: 1.2rem;
-  margin-top: 2rem;
-}
-
-h5 {
-  font-size: 1rem;
-  margin-top: 1.8rem;
-}
-
-h6 {
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: normal;
-  margin-top: 2.5rem;
-}
-
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.625rem;
-}
-
-h1 + h2 {
-  margin-top: 1.625rem;
-}
-
-h2 + h3,
-h3 + h4,
-h4 + h5 {
-  margin-top: 0.8rem;
-}
-
-h5 + h6 {
-  margin-top: -0.8rem;
-}
-
+h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 0.8rem;
+h3 {
+  color: var(--ink);
 }
 
-html {
-  background-color: #062f40;/*#5a0000; /* light gray */
-  margin-top: 40px;
-  margin-bottom: 40px;
+h1 {
+  max-width: 12ch;
+  margin-bottom: 1rem;
+  font-family: "Libertinus", Georgia, serif;
+  font-size: 4.25rem;
+  font-weight: 700;
+  line-height: 0.95;
 }
-body{
-  padding:60px
+
+.hero-lede {
+  max-width: 740px;
+  margin-bottom: 1.35rem;
+  color: #27424c;
+  font-size: 1.22rem;
+  line-height: 1.65;
+  overflow-wrap: break-word;
+}
+
+.hero-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1rem;
+  max-width: 760px;
+  margin: 0 0 1.6rem;
+}
+
+.hero-facts div {
+  min-width: 0;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--line);
+}
+
+.hero-facts dt {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero-facts dd {
+  margin: 0.18rem 0 0;
+  color: var(--ink);
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero-visual {
+  position: relative;
+  margin: 0;
+  min-width: 0;
+}
+
+.profile-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.section {
+  padding: 5.5rem 0;
+}
+
+.section-muted {
+  border-block: 1px solid var(--line);
+  background: rgba(232, 244, 248, 0.76);
+}
+
+#background {
+  padding-block: 4rem;
+}
+
+#background .section-header {
+  margin-bottom: 1.35rem;
+}
+
+.section-header,
+.section-grid,
+.publication-list,
+.timeline,
+.news-list,
+.resource-grid {
+  width: min(var(--max-width), calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-header h2,
+.section-heading h2 {
+  margin: 0;
+  font-family: "Libertinus", Georgia, serif;
+  font-size: 2.5rem;
+  line-height: 1.08;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 4rem;
+  align-items: start;
+}
+
+.section-grid.compact {
+  align-items: center;
+}
+
+.prose {
+  max-width: 780px;
+  color: #27424c;
+}
+
+.prose p {
+  margin-bottom: 1.15rem;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.callout {
+  padding: 1.4rem;
+  border-left: 5px solid var(--gold);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 12px 35px rgba(16, 42, 51, 0.08);
+}
+
+.publication-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.publication-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 10px 30px rgba(16, 42, 51, 0.07);
+}
+
+.publication-card[open] {
+  border-color: rgba(0, 109, 143, 0.36);
+}
+
+.publication-card summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1.25rem 3.25rem 1.25rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.publication-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.publication-card summary::after {
+  position: absolute;
+  top: 1.28rem;
+  right: 1.25rem;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--primary);
+  content: "+";
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
+}
+
+.publication-card[open] summary::after {
+  content: "-";
+}
+
+.publication-year {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  min-height: 38px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.publication-main {
+  display: grid;
+  gap: 0.22rem;
+  min-width: 0;
+}
+
+.publication-title {
+  color: var(--ink);
+  font-family: "Libertinus", Georgia, serif;
+  font-size: 1.28rem;
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+
+.publication-authors,
+.publication-venue,
+.publication-meta {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.publication-meta {
+  color: #29444f;
+  font-weight: 700;
+}
+
+.publication-abstract {
+  padding: 0 1.25rem 1.35rem calc(82px + 2.5rem);
+}
+
+.publication-abstract h3 {
+  margin: 0 0 0.45rem;
+  color: var(--primary-strong);
+  font-size: 0.96rem;
+  text-transform: uppercase;
+}
+
+.publication-abstract p {
+  max-width: 900px;
+  margin-bottom: 1rem;
+  color: #27424c;
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 0.65rem;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline li {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.timeline time {
+  align-self: start;
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.timeline li > div {
+  min-height: 68px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.timeline h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+}
+
+.timeline p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.news-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.news-item[hidden] {
+  display: none;
+}
+
+.news-item time {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.news-item p {
+  margin: 0;
+  color: #27424c;
+  overflow-wrap: break-word;
+}
+
+.news-toggle {
+  display: flex;
+  width: min(var(--max-width), calc(100% - 2rem));
+  margin: 1.2rem auto 0;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.resource-item {
+  min-height: 230px;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 10px 30px rgba(16, 42, 51, 0.07);
+  min-width: 0;
+}
+
+.resource-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 1rem;
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.resource-item h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.08rem;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+}
+
+.resource-item p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(var(--max-width), calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 980px) {
+  .nav-shell {
+    grid-template-columns: 1fr auto;
+  }
+
+  .nav-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: flex-start;
+    padding-bottom: 0.8rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+    gap: 2rem;
+    align-items: start;
+    min-height: auto;
+    padding: 3.5rem 0;
+  }
+
+  h1 {
+    max-width: none;
+    font-size: 3.6rem;
+    line-height: 1;
+  }
+
+  .hero-lede {
+    font-size: 1.08rem;
+  }
+
+  .profile-photo {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero-facts {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .resource-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-shell,
+  .section-header,
+  .section-grid,
+  .publication-list,
+  .timeline,
+  .news-list,
+  .news-toggle,
+  .resource-grid,
+  .site-footer {
+    width: calc(100vw - 1.25rem);
+    max-width: var(--max-width);
+  }
+
+  .site-header {
+    position: static;
+  }
+
+  .nav-shell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+    padding: 0.9rem 0;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .nav-action {
+    align-self: flex-start;
+    min-height: 40px;
+    padding: 0.58rem 0.75rem;
+  }
+
+  .nav-links a {
+    min-height: 36px;
+    padding: 0.38rem 0.58rem;
+    font-size: 0.88rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    width: calc(100vw - 1.25rem);
+    max-width: var(--max-width);
+    padding: 3.25rem 0;
+  }
+
+  .hero-copy,
+  .hero-visual {
+    width: 100%;
+    max-width: calc(100vw - 1.25rem);
+  }
+
+  .hero-lede {
+    max-width: calc(100vw - 1.25rem);
+  }
+
+  h1 {
+    max-width: none;
+    font-size: 3.15rem;
+  }
+
+  .hero-lede {
+    font-size: 1.08rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section-header h2,
+  .section-heading h2 {
+    font-size: 2.05rem;
+  }
+
+  .publication-card summary {
+    grid-template-columns: 1fr;
+    padding-right: 3rem;
+  }
+
+  .publication-abstract {
+    padding-left: 1.25rem;
+  }
+
+  .timeline li,
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .timeline time {
+    width: fit-content;
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-item {
+    min-height: auto;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
 }
